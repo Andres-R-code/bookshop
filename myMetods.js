@@ -37,14 +37,13 @@ _ = {
         return undefined;
     },
     
-    contains: (array, filtrado) => {
-        for (let i = 0; i < array.length; i++) {
-            let element = array[i];
-            if (element === filtrado) {
-                return console.log(true);
-            } else {
-                return console.log(false);
-            }
+    contains: (array, filtered) => {
+        const a = Object.assign({}, array);
+        const b = filtered;
+        if (b in a) {
+            console.log(true);
+        } else {
+            console.log(false);
         }
     },
     pluck: (array, property) => {
@@ -95,7 +94,7 @@ const stooges = [{ name: 'moe', age: 40 }, { name: 'larry', age: 50 }, { name: '
 // console.log(biggerrr);
 
 // Se usa Contains para que retorne true si el tres esta en el array
-// const z = _.contains(numbers, 42);
+// const z = _.contains(numbers, 3);
 
 //uso Pluck para extraer todos los datos del array 
 // const x = _.pluck(stooges, "name");
